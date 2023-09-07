@@ -52,8 +52,7 @@ const ListTodos = () => {
               <td>{todo.todo_id}</td>
               <td>{todo.description}</td>
               <td>
-                {' '}
-                <EditTodo />
+                <EditTodo todo={todo} />
               </td>
               <td>
                 <button
