@@ -6,7 +6,7 @@ const InputTodo = () => {
   const onSubmitForm = async (event) => {
     event.preventDefault();
     try {
-      const url = 'http://localhost:5000/todos';
+      const url = `${process.env.REACT_APP_API_URL}/todos`;
       let res = await fetch(url, {
         method: 'POST',
         headers: {

@@ -6,11 +6,14 @@ const EditTodo = ({ todo }) => {
 
   const updateDescriptionInDb = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/todos/${todo.todo_id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ description }),
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/todos/${todo.todo_id}`,
+        {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ description }),
+        }
+      );
       const data = await res.json();
       window.location = '/';
     } catch (err) {

@@ -7,7 +7,7 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/todos/${id}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/todos/${id}`, {
         method: 'DELETE',
       });
       console.log(res);
@@ -19,7 +19,7 @@ const ListTodos = () => {
 
   const fetchTodos = async () => {
     try {
-      const url = 'http://localhost:5000/todos';
+      const url = `${process.env.REACT_APP_API_URL}/todos`;
       let res = await fetch(url);
       if (!res.ok) {
         throw new Error('Network response was not ok');

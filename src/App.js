@@ -1,15 +1,20 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 //components
-import InputTodo from './components/InputTodo';
-import ListTodos from './components/ListTodos';
+import ToDos from './components/ToDos';
+import NavBar from './components/NavBar';
+import NewsFeed from './components/NewsFeed';
 
 function App() {
   return (
     <>
       <div className="container">
-        <InputTodo />
-        <ListTodos />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ToDos />} />
+          <Route path="/news" element={<NewsFeed />} />
+        </Routes>
       </div>
     </>
   );
